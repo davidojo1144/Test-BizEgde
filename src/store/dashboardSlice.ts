@@ -1,6 +1,5 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit"
 import type {
-  User,
   Task,
   Celebration,
   TimeoffRequest,
@@ -13,7 +12,11 @@ import type {
 } from "../types"
 
 interface DashboardState {
-  user: User | null
+  user: {
+    id: string
+    name: string
+    role: string
+  } | null
   tasks: Task[]
   celebrations: Celebration[]
   timeoffRequests: TimeoffRequest[]
@@ -33,7 +36,6 @@ const initialState: DashboardState = {
     id: "1",
     name: "Williams Oluwadamilare",
     role: "Employee",
-    avatar: "/placeholder-user.jpg",
   },
   tasks: [
     { id: "1", title: "Create the New Onboar...", status: "completed", priority: "high" },

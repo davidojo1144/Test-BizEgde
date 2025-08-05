@@ -4,30 +4,18 @@ import { Provider } from "react-redux"
 import { store } from "./store"
 import { Header } from "./components/Header"
 import { DashboardLayout } from "./components/DashboardLayout"
-import { TimeoffLayout } from "./components/TimeoffLayout"
 import { useAppSelector } from "./hooks/useAppSelector"
 import { useAppDispatch } from "./hooks/useAppDispatch"
 import { toggleFeeds, toggleCompactView } from "./store/dashboardSlice"
 import { Button } from "@/components/ui/button"
 
 function DashboardContent() {
-  const { user, showFeeds, compactView, currentView } = useAppSelector((state) => state.dashboard)
+  const { user, showFeeds, compactView } = useAppSelector((state) => state.dashboard)
   const dispatch = useAppDispatch()
-
-  const renderCurrentView = () => {
-    switch (currentView) {
-      case "timeoff-requests":
-        return <TimeoffLayout />
-      case "benefits":
-        return <DashboardLayout />
-      default:
-        return <DashboardLayout />
-    }
-  }
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header compactView={compactView} />
+      <Header />
 
       <main className="p-6">
         <div className="mb-6">
@@ -44,7 +32,7 @@ function DashboardContent() {
           </Button>
         </div>
 
-        {renderCurrentView()}
+        <DashboardLayout />
       </main>
     </div>
   )
