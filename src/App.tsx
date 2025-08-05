@@ -8,6 +8,7 @@ import { useAppSelector } from "./hooks/useAppSelector"
 import { useAppDispatch } from "./hooks/useAppDispatch"
 import { toggleFeeds, toggleCompactView } from "./store/dashboardSlice"
 import { Button } from "@/components/ui/button"
+import { Activity } from "./components/Activity"
 
 function DashboardContent() {
   const { user, showFeeds, compactView } = useAppSelector((state) => state.dashboard)
@@ -42,6 +43,7 @@ function App() {
   return (
     <Provider store={store}>
       <DashboardContent />
+      <Activity/>
     </Provider>
   )
 }
