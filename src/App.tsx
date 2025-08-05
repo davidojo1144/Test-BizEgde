@@ -15,6 +15,7 @@ import { Celebrations } from "./components/Celebrations"
 import { Feeds } from "./components/Feeds"
 import { MyTeams } from "./components/MyTeams"
 import { TasksList } from "./components/TasksList"
+import { TimeoffLayout } from "./components/TimeoffLayout"
 
 function DashboardContent() {
   const { user, showFeeds, compactView } = useAppSelector((state) => state.dashboard)
@@ -56,6 +57,7 @@ function App() {
       <Feeds/>
       <MyTeams/>
       <TasksList/>
+      <TimeoffLayout/>
     </Provider>
   )
 }
