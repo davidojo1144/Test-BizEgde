@@ -10,6 +10,7 @@ import { toggleFeeds, toggleCompactView } from "./store/dashboardSlice"
 import { Button } from "@/components/ui/button"
 import { Activity } from "./components/Activity"
 import { AttendanceStats } from "./components/AttendanceStats"
+import { Benefits } from "./components/Benefits"
 
 function DashboardContent() {
   const { user, showFeeds, compactView } = useAppSelector((state) => state.dashboard)
@@ -46,6 +47,7 @@ function App() {
       <DashboardContent />
       <Activity/>
       <AttendanceStats/>
+      <Benefits/>
     </Provider>
   )
 }
