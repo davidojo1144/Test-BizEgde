@@ -11,6 +11,9 @@ import { Button } from "@/components/ui/button"
 import { Activity } from "./components/Activity"
 import { AttendanceStats } from "./components/AttendanceStats"
 import { Benefits } from "./components/Benefits"
+import { Celebrations } from "./components/Celebrations"
+import { Feeds } from "./components/Feeds"
+import { MyTeams } from "./components/MyTeams"
 
 function DashboardContent() {
   const { user, showFeeds, compactView } = useAppSelector((state) => state.dashboard)
@@ -48,6 +51,9 @@ function App() {
       <Activity/>
       <AttendanceStats/>
       <Benefits/>
+      <Celebrations/>
+      <Feeds/>
+      <MyTeams/>
     </Provider>
   )
 }
