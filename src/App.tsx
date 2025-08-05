@@ -20,7 +20,7 @@ function DashboardContent() {
       <main className="p-6">
         <div className="mb-6">
           <p className="text-gray-600">Good Morning,</p>
-          <h1 className="text-2xl font-bold">{user?.name} || Guest</h1>
+          <h1 className="text-2xl font-bold">{user?.name}</h1>
         </div>
 
         <div className="flex gap-2 mb-6">
