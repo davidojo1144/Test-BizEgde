@@ -9,6 +9,7 @@ import { useAppDispatch } from "./hooks/useAppDispatch"
 import { toggleFeeds, toggleCompactView } from "./store/dashboardSlice"
 import { Button } from "@/components/ui/button"
 import { Activity } from "./components/Activity"
+import { AttendanceStats } from "./components/AttendanceStats"
 
 function DashboardContent() {
   const { user, showFeeds, compactView } = useAppSelector((state) => state.dashboard)
@@ -44,6 +45,7 @@ function App() {
     <Provider store={store}>
       <DashboardContent />
       <Activity/>
+      <AttendanceStats/>
     </Provider>
   )
 }
